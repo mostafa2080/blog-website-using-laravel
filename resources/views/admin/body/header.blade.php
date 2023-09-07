@@ -63,7 +63,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href=""><i class="ri-user-line align-middle me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="ri-user-line align-middle me-1"></i> Profile</a>
                     <a class="dropdown-item" href=""><i class="ri-wallet-2-line align-middle me-1"></i> Change
                         Password</a>
                     <a class="dropdown-item d-block" href="#"><span
