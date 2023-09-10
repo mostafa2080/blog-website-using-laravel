@@ -23,9 +23,10 @@
                                     <li class="{{ $route == 'home' ? 'active' : '' }}"><a href="">Home</a></li>
                                     {{-- {{ route('home') }} --}}
 
-                                    <li class="{{ $route == 'home.about' ? 'active' : '' }}"><a href="">About</a>
+                                    <li class="{{ $route == 'home.about' ? 'active' : '' }}"><a
+                                            href="{{ route('home.about') }}">About</a>
                                     </li>
-                                    {{-- {{ route('home.about') }} --}}
+
 
 
                                     <li><a href="services-details.html">Services</a></li>
