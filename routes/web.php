@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\ProfileController;
@@ -47,6 +48,7 @@ Route::controller(HomeSliderController::class)->group(function () {
     Route::post('/update/slide', 'UpdateSlider')->name('update.slide');
 });
 
+// About All routes
 Route::controller(AboutController::class)->group(function () {
     Route::get('/about/page', 'AboutPage')->name('about.page');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
@@ -57,6 +59,11 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/edit/multi/image/{id}', 'EditMultiImage')->name('edit.multi.image');
     Route::post('/update/multi/image', 'UpdateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
+});
+
+// Portfolio All routes
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/portfolio/all', 'AllPortfolio')->name('all.portfolio');
 });
 
 require __DIR__ . '/auth.php';
