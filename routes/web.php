@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,4 +72,11 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::get('/update/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');});
 
+// Blog Category All routes
+    Route::controller(BlogCategoryController::class)->group(function () {
+        Route::get('/all/blog/category', 'AllBlogCategory')->name('all.blog.category');
+
+
+
+    });
 require __DIR__ . '/auth.php';
