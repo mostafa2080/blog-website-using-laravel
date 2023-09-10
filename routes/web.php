@@ -70,13 +70,15 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
     Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
     Route::get('/update/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
-    Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');});
+    Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+});
 
 // Blog Category All routes
-    Route::controller(BlogCategoryController::class)->group(function () {
-        Route::get('/all/blog/category', 'AllBlogCategory')->name('all.blog.category');
+Route::controller(BlogCategoryController::class)->group(function () {
+    Route::get('/all/blog/category', 'AllBlogCategory')->name('all.blog.category');
+    Route::get('/add/blog/category', 'AddBlogCategory')->name('add.blog.category');
+    Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
+    Route::get('/delete/blog/category', 'DeleteBlogCategory')->name('delete.blog.category');
 
-
-
-    });
+});
 require __DIR__ . '/auth.php';
