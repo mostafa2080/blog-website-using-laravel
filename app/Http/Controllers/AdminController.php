@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         $id = Auth::user()->id;
         $editData = User::find($id);
-        return view('admin.admin_profile_edit', compact('editData'));
+    return view('admin.admin_profile_edit', compact('editData'));
     } //end edit profile method
 
     public function StoreProfile(Request $request)
@@ -74,7 +74,7 @@ class AdminController extends Controller
             'newpassword' => 'required',
             'confirm_password' => 'required|same:newpassword',
         ]);
-        
+
         $hashedPassword = Auth::user()->password;
         if (Hash::check($request->oldpassword, $hashedPassword)) {
             $user = user::find(Auth::id());
