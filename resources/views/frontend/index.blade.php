@@ -1,10 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 @section('title')
-    Home | EasyLearning Website
+    Home | Mostafa Shaaban Website
 @endsection
 <!-- banner-area -->
-{{-- @include('frontend.home_all.home_slide') --}}
+@include('frontend.home_all.home_slide')
 <!-- banner-area-end -->
 
 <!-- about-area -->
@@ -244,7 +244,7 @@
 
 <!-- portfolio-area -->
 
-{{-- @include('frontend.home_all.portfolio') --}}
+@include('frontend.home_all.portfolio')
 
 <!-- portfolio-area-end -->
 
