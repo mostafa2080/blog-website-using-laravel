@@ -63,7 +63,10 @@ Route::controller(AboutController::class)->group(function () {
 
 // Portfolio All routes
 Route::controller(PortfolioController::class)->group(function () {
-    Route::get('/portfolio/all', 'AllPortfolio')->name('all.portfolio');
+    Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
+    Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
+    Route::post('/add/portfolio', 'StorePortfolio')->name('store.protfolio');
+
 });
 
 require __DIR__ . '/auth.php';
