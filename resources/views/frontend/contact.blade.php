@@ -47,8 +47,8 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form method="post" action="" class="contact__form">
-                {{-- {{ route('store.message') }} --}}
+            <form method="post" action="{{ route('store.message') }}" class="contact__form">
+
                 @csrf
 
                 <div class="row">
