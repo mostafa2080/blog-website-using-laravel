@@ -50,11 +50,13 @@
                                                     style="width: 60px; height: 50px;"> </td>
 
                                             <td>
-                                                <a href="{{ route('edit.blog', $item->id) }}" class="btn btn-info sm"
-                                                    title="Edit Data"> <i class="fas fa-edit"></i> </a>
+                                                <a href="" class="btn btn-info sm" title="Edit Data"> <i
+                                                        class="fas fa-edit"></i> </a>
+                                                {{-- {{ route('edit.blog', $item->id) }} --}}
 
-                                                <a href="{{ route('delete.blog', $item->id) }}" class="btn btn-danger sm"
-                                                    title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>
+                                                <a href="" class="btn btn-danger sm" title="Delete Data"
+                                                    id="delete"> <i class="fas fa-trash-alt"></i>
+                                                    {{-- {{ route('delete.blog', $item->id) }} --}}
                                                 </a>
 
                                             </td>
