@@ -36,4 +36,10 @@ class ContactController extends Controller
         return redirect()->back()->with($notification);
     } // end mehtod
 
+    public function ContactMessage()
+    {
+
+        $contacts = Contact::latest()->get();
+        return view('admin.contact.contact_all', compact('contacts'));
+    } // end mehtod
 }
