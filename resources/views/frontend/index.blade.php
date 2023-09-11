@@ -369,7 +369,7 @@
 <!-- testimonial-area-end -->
 
 <!-- blog-area -->
-{{-- @include('frontend.home_all.home_blog') --}}
+@include('frontend.home_all.home_blog')
 <!-- blog-area-end -->
 
 <!-- contact-area -->
