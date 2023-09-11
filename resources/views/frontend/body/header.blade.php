@@ -1,5 +1,5 @@
 @php
-
+    
     $route = Route::current()->getName();
 @endphp
 
@@ -44,9 +44,10 @@
 
 
                                     </li>
-                                    <li class="{{ $route == 'contact.me' ? 'active' : '' }}"><a href="">contact
+                                    <li class="{{ $route == 'contact.me' ? 'active' : '' }}"><a
+                                            href="{{ route('contact.me') }}">contact
                                             me</a></li>
-                                    {{-- {{ route('contact.me') }} --}}
+
                                 </ul>
                             </div>
 
