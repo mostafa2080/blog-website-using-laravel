@@ -32,8 +32,8 @@
                                     <li><a href="services-details.html">Services</a></li>
 
                                     <li class="{{ $route == 'home.portfolio' ? 'active' : '' }}"><a
-                                            href=" ">Portfolio</a>
-                                        {{-- {{ route('home.portfolio') }} --}}
+                                            href="{{ route('home.portfolio') }}">Portfolio</a>
+
 
 
                                     </li>
