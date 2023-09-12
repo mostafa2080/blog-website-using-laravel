@@ -20,7 +20,8 @@
 
                             <h4 class="card-title">Edit Blog Page </h4>
 
-                            <form method="post" action="{{ route('update.blog') }}" enctype="multipart/form-data">
+                            <form method="post" id="editForm" action="{{ route('update.blog') }}"
+                                enctype="multipart/form-data">
 
                                 @csrf
 
@@ -46,8 +47,8 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Blog Title </label>
                                     <div class="col-sm-10">
-                                        <input name="blog_title" value="{{ $blogs->blog_title }}" class="form-control"
-                                            type="text" id="example-text-input">
+                                        <input name="blog_title" placeholder="" value="{{ $blogs->blog_title }}"
+                                            class="form-control" type="text" id="example-text-input">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -56,8 +57,8 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Blog Tags </label>
                                     <div class="col-sm-10">
-                                        <input name="blog_tags" value="{{ $blogs->blog_tags }}" class="form-control"
-                                            type="text" data-role="tagsinput">
+                                        <input name="blog_tags" placeholder="" value="{{ $blogs->blog_tags }}"
+                                            class="form-control" type="text" data-role="tagsinput">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -68,7 +69,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Blog Description
                                     </label>
                                     <div class="col-sm-10">
-                                        <textarea id="elm1" name="blog_description">
+                                        <textarea id="elm1" placeholder="" name="blog_description">
       {{ $blogs->blog_description }}
       </textarea>
                                     </div>
@@ -111,12 +112,29 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#image').change(function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#showImage').attr('src', e.target.result);
+            $('#editForm').validate({
+                rules: {
+                    blog_title: {
+                        required: true
+                    },
+                    blog_tags: {
+                        required: true
+                    },
+                    blog_description: {
+                        required: true
+                    }
+                },
+                messages: {
+                    blog_title: {
+                        required: "Please enter the blog title."
+                    },
+                    blog_tags: {
+                        required: "Please enter at least one blog tag."
+                    },
+                    blog_description: {
+                        required: "Please enter the blog description."
+                    }
                 }
-                reader.readAsDataURL(e.target.files['0']);
             });
         });
     </script>
