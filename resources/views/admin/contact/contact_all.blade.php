@@ -50,9 +50,10 @@
 
                                             <td>
 
-                                                {{-- {{ route('delete.message', $item->id) }} --}}
-                                                <a href="" class="btn btn-danger sm" title="Delete Data"
-                                                    id="delete"> <i class="fas fa-trash-alt"></i>
+
+                                                <a href=" {{ route('delete.message', $item->id) }}"
+                                                    class="btn btn-danger sm" title="Delete Data" id="delete"> <i
+                                                        class="fas fa-trash-alt"></i>
                                                 </a>
 
                                             </td>
