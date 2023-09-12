@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
     <div class="page-content">
         <div class="container-fluid">
@@ -12,7 +13,8 @@
 
                             <h4 class="card-title">Edit Profile Page </h4>
 
-                            <form method="post" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+                            <form id='editForm' method="post" action="{{ route('store.profile') }}"
+                                enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row mb-3">
@@ -85,6 +87,55 @@
                     $('#showImage').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#editForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                        type: 'email',
+                    },
+                    username: {
+                        required: true,
+                        minlength: 3,
+                    }
+
+                },
+                messages: {
+                    name: {
+                        required: 'Name Can not be empty',
+                    },
+                    email: {
+                        required: 'Please Enter you email address',
+                    },
+                    username: {
+                        required: 'Please enter your username',
+                    },
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    let n = element.attr("name");
+                    if (n == "name")
+                        element.attr("placeholder", "Name can not be empty");
+                    else if (n == "email")
+                        element.attr("placeholder", "Please enter your Email address");
+                    else if (n == "username")
+                        element.attr("placeholder", "Please enter your username");
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
             });
         });
     </script>
