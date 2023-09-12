@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -50,6 +50,7 @@ Route::controller(AdminController::class)->group(function () {
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
     Route::post('/update/slide', 'UpdateSlider')->name('update.slide');
+    Route::get('/', 'HomePage')->name('home');
 });
 
 // About All routes

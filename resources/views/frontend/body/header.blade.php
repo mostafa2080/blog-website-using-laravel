@@ -20,8 +20,9 @@
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
 
-                                    <li class="{{ $route == 'home' ? 'active' : '' }}"><a href="">Home</a></li>
-                                    {{-- {{ route('home') }} --}}
+                                    <li class="{{ $route == 'home' ? 'active' : '' }}"><a
+                                            href="{{ route('home') }}">Home</a></li>
+
 
                                     <li class="{{ $route == 'home.about' ? 'active' : '' }}"><a
                                             href="{{ route('home.about') }}">About</a>
