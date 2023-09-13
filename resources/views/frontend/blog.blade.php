@@ -48,7 +48,7 @@
                             <div class="standard__blog__thumb">
                                 <a href="blog-details.html"><img src="{{ asset($item->blog_image) }}"
                                         alt=""></a>
-                                <a href="blog-details.html" class="blog__link"><i
+                                <a href="{{ route('blog.details', $item->id) }}" class="blog__link"><i
                                         class="far fa-long-arrow-right"></i></a>
                             </div>
                             <div class="standard__blog__content">
@@ -91,8 +91,8 @@
                                 @foreach ($allblogs as $all)
                                     <li class="rc__post__item">
                                         <div class="rc__post__thumb">
-                                            <a href="blog-details.html"><img src="{{ asset($all->blog_image) }} "
-                                                    alt=""></a>
+                                            <a href="{{ route('blog.details', $all->id) }}"><img
+                                                    src="{{ asset($all->blog_image) }} " alt=""></a>
                                         </div>
                                         <div class="rc__post__content">
                                             <h5 class="title"><a href="blog-details.html">{{ $all->blog_title }}
@@ -111,52 +111,21 @@
                             <ul class="sidebar__cat">
                                 @foreach ($categories as $cat)
                                     <li class="sidebar__cat__item"><a
-                                            href="{{ route('category.blog', $cat->id) }}">{{ $cat->blog_category }} </a>
+                                            href="{{ route('category.blog', $cat->id) }}">{{ $cat->blog_category }}
+                                        </a>
                                     </li>
                                 @endforeach
                             </ul>
                         </div>
 
 
-                        <div class="widget">
-                            <h4 class="widget-title">Recent Comment</h4>
-                            <ul class="sidebar__comment">
-                                <li class="sidebar__comment__item">
-                                    <a href="blog-details.html">Rasalina Sponde</a>
-                                    <p>There are many variations of passages of lorem ipsum available, but the majority
-                                        have</p>
-                                </li>
-                                <li class="sidebar__comment__item">
-                                    <a href="blog-details.html">Rasalina Sponde</a>
-                                    <p>There are many variations of passages of lorem ipsum available, but the majority
-                                        have</p>
-                                </li>
-                                <li class="sidebar__comment__item">
-                                    <a href="blog-details.html">Rasalina Sponde</a>
-                                    <p>There are many variations of passages of lorem ipsum available, but the majority
-                                        have</p>
-                                </li>
-                                <li class="sidebar__comment__item">
-                                    <a href="blog-details.html">Rasalina Sponde</a>
-                                    <p>There are many variations of passages of lorem ipsum available, but the majority
-                                        have</p>
-                                </li>
-                            </ul>
-                        </div>
+
                         <div class="widget">
                             <h4 class="widget-title">Popular Tags</h4>
                             <ul class="sidebar__tags">
-                                <li><a href="blog.html">Business</a></li>
-                                <li><a href="blog.html">Design</a></li>
-                                <li><a href="blog.html">apps</a></li>
-                                <li><a href="blog.html">landing page</a></li>
-                                <li><a href="blog.html">data</a></li>
-                                <li><a href="blog.html">website</a></li>
-                                <li><a href="blog.html">book</a></li>
-                                <li><a href="blog.html">Design</a></li>
-                                <li><a href="blog.html">product design</a></li>
-                                <li><a href="blog.html">landing page</a></li>
-                                <li><a href="blog.html">data</a></li>
+                                @foreach ($allblogs as $item)
+                                    <li><a href="#">{{ $item->blog_tags }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </aside>
