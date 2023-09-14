@@ -118,6 +118,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('all.services') }}">All Service</a></li>
+                        <li><a href="{{ route('add.services') }}">Add Service</a></li>
 
 
                     </ul>
