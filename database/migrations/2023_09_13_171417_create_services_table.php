@@ -13,15 +13,20 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-        });
-    }
+            $table->string('service_title')->nullable();
+             $table->string('service_image')->nullable();
+             $table->string('service_header')->nullable();
+             $table->string('service_short_description')->nullable();
+             $table->string('service_list')->nullable();
+             $table->timestamps();
+         });
+     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('services');
-    }
-};
+     /**
+      * Reverse the migrations.
+      */
+     public function down(): void
+     {
+         Schema::dropIfExists('services');
+     }
+ };
