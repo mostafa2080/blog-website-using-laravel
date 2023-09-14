@@ -30,24 +30,30 @@
 
 
 
-                                    <li><a href="services-details.html">Services</a></li>
-
-                                    <li class="{{ $route == 'home.portfolio' ? 'active' : '' }}"><a
-                                            href="{{ route('home.portfolio') }}">Portfolio</a>
+                                    < <li class="{{ $route == 'home.services' ? 'active' : '' }}"><a
+                                            href="{{ route('home.services') }}">Services</a>
 
 
 
-                                    </li>
+                                        </li>
 
-                                    <li class="{{ $route == 'home.blog' ? 'active' : '' }}"><a
-                                            href=" {{ route('home.blog') }}">Our
-                                            Blog</a>
+                                        <li class="{{ $route == 'home.portfolio' ? 'active' : '' }}"><a
+                                                href="{{ route('home.portfolio') }}">Portfolio</a>
 
 
-                                    </li>
-                                    <li class="{{ $route == 'contact.me' ? 'active' : '' }}"><a
-                                            href="{{ route('contact.me') }}">contact
-                                            me</a></li>
+
+                                        </li>
+
+                                        <li class="{{ $route == 'home.blog' ? 'active' : '' }}"><a
+                                                href=" {{ route('home.blog') }}">Our
+                                                Blog</a>
+
+
+                                        </li>
+                                        <li class="{{ $route == 'contact.me' ? 'active' : '' }}"><a
+                                                href="{{ route('contact.me') }}">contact
+                                                me</a></li>
+
 
                                 </ul>
                             </div>

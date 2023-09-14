@@ -138,6 +138,6 @@ Route::controller(ServiceController::class)->group(function () {
     Route::post('/store/services', 'StoreService')->name('store.services');
     Route::get('/edit/services/{id}', 'EditService')->name('edit.service');
     Route::post('/update/services', 'UpdateService')->name('update.services');
-
+    Route::get('/home/services', 'HomeServices')->name('home.services');
 });
 require __DIR__ . '/auth.php';

@@ -98,4 +98,9 @@ class ServiceController extends Controller
 
     } // End Method
 
+    public function HomeServices()
+    {
+        $services = Service::latest()->get();
+        return view('frontend.services', compact('services'));
+    }
 }
