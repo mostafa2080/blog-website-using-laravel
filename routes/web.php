@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\ContactController;
+use App\Http\Controllers\Home\ServiceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -128,5 +129,10 @@ Route::controller(ContactController::class)->group(function () {
         Route::get('/contact/message', 'ContactMessage')->name('contact.message');
         Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');
     });
+});
+
+// Services All Route
+Route::controller(ServiceController::class)->group(function () {
+    Route::get('/all/services', 'AllServices')->name('all.services');
 });
 require __DIR__ . '/auth.php';
