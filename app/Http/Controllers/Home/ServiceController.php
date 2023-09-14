@@ -12,5 +12,10 @@ class ServiceController extends Controller
     {
         $allservices = Service::latest()->get();
         return view('admin.service.all_services', compact('allservices'));
+    } //end methid
+
+    public function AddService()
+    {
+        return view('admin.service.add_service');
     }
 }
