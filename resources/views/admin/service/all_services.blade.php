@@ -55,8 +55,8 @@
 
                                                 <a href="{{ route('edit.service', $item->id) }}" class="btn btn-info sm"
                                                     title="Edit Data"> <i class="fas fa-edit"></i> </a>
-                                                {{-- {{ route('delete.blog', $item->id) }} --}}
 
+                                                {{-- {{ route('delete.blog', $item->id) }} --}}
                                                 <a href="" class="btn btn-danger sm" title="Delete Data"
                                                     id="delete"> <i class="fas fa-trash-alt"></i>
 

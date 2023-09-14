@@ -44,7 +44,11 @@ class ServiceController extends Controller
             'message' => 'Blog Inserted Successfully',
             'alert-type' => 'success'
         );
-
         return redirect()->route('all.services')->with($notification);
+    } // End Method
+    public function EditService($id)
+    {
+        $service = Service::findOrFail($id);
+        return view('admin.service.edit_service', compact('service'));
     } // End Method
 }
