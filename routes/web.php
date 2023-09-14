@@ -137,5 +137,7 @@ Route::controller(ServiceController::class)->group(function () {
     Route::get('/add/services', 'AddService')->name('add.services');
     Route::post('/store/services', 'StoreService')->name('store.services');
     Route::get('/edit/services/{id}', 'EditService')->name('edit.service');
+    Route::post('/update/services', 'UpdateService')->name('update.services');
+
 });
 require __DIR__ . '/auth.php';

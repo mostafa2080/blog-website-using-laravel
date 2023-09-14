@@ -41,7 +41,7 @@ class ServiceController extends Controller
 
         ]);
         $notification = array(
-            'message' => 'Blog Inserted Successfully',
+            'message' => 'Service Inserted Successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('all.services')->with($notification);
@@ -51,4 +51,51 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         return view('admin.service.edit_service', compact('service'));
     } // End Method
+
+    public function UpdateService(Request $request)
+    {
+
+        $service_id = $request->id;
+
+        if ($request->file('service_image')) {
+            $image = $request->file('service_image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();  // 3434343443.jpg
+
+            Image::make($image)->resize(323, 240)->save('upload/service/' . $name_gen);
+            $save_url = 'upload/service/' . $name_gen;
+
+            Service::findOrFail($service_id)->update([
+                'service_title' => $request->service_title,
+                'service_header' => $request->service_header,
+                'service_short_description' => $request->service_short_description,
+                'service_list' => $request->service_list,
+                'service_image' => $save_url,
+
+            ]);
+            $notification = array(
+                'message' => 'Service Updated with Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.services')->with($notification);
+        } else {
+
+            Service::findOrFail($service_id)->update([
+                'service_title' => $request->service_title,
+                'service_header' => $request->service_header,
+                'service_short_description' => $request->service_short_description,
+                'service_list' => $request->service_list,
+
+            ]);
+
+            $notification = array(
+                'message' => 'Service Updated without Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.services')->with($notification);
+        } // end Else
+
+    } // End Method
+
 }
