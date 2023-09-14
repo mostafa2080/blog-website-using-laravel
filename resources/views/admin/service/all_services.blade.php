@@ -47,16 +47,17 @@
                                             <td> {{ $item->service_title }} </td>
                                             <td> {{ $item->service_header }} </td>
                                             <td> {{ $item->service_short_description }} </td>
-                                            <td> {{ $item->service_list }} </td>
-                                            <td> <img src="{{ asset($item->blog_image) }}"
+                                            <td> <img src="{{ asset($item->service_image) }}"
                                                     style="width: 60px; height: 50px;"> </td>
+                                            <td> {{ $item->service_list }} </td>
 
                                             <td>
-                                                <a href="{{ route('edit.blog', $item->id) }}" class="btn btn-info sm"
+
+                                                <a href="{{ route('edit.service', $item->id) }}" class="btn btn-info sm"
                                                     title="Edit Data"> <i class="fas fa-edit"></i> </a>
+                                                {{-- {{ route('delete.blog', $item->id) }} --}}
 
-
-                                                <a href="{{ route('delete.blog', $item->id) }}" class="btn btn-danger sm" title="Delete Data"
+                                                <a href="" class="btn btn-danger sm" title="Delete Data"
                                                     id="delete"> <i class="fas fa-trash-alt"></i>
 
                                                 </a>

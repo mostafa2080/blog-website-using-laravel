@@ -135,5 +135,6 @@ Route::controller(ContactController::class)->group(function () {
 Route::controller(ServiceController::class)->group(function () {
     Route::get('/all/services', 'AllServices')->name('all.services');
     Route::get('/add/services', 'AddService')->name('add.services');
+    Route::post('/store/services', 'StoreService')->name('store.services');
 });
 require __DIR__ . '/auth.php';

@@ -19,8 +19,7 @@
                         <div class="card-body">
 
                             <h4 class="card-title">Add Service Page </h4>
-                            {{-- {{ route('store.blog') }} --}}
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('store.services') }}" enctype="multipart/form-data">
                                 @csrf
 
 
@@ -59,6 +58,15 @@
 
                                 <!-- end row -->
 
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Service List </label>
+                                    <div class="col-sm-10">
+                                        <input name="service_list" value="insert" class="form-control" type="text"
+                                            data-role="tagsinput">
+                                    </div>
+                                </div>
+                                <!-- end row -->
+
 
 
                                 <div class="row mb-3">
@@ -76,7 +84,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Service Image </label>
                                     <div class="col-sm-10">
-                                        <input name="blog_image" class="form-control" type="file" id="image">
+                                        <input name="service_image" class="form-control" type="file" id="image">
 
                                     </div>
                                 </div>
@@ -94,7 +102,7 @@
 
 
                                 <input type="submit" class="btn btn-info waves-effect waves-light"
-                                    value="Insert Blog Data">
+                                    value="Insert Service Data">
                             </form>
 
 
