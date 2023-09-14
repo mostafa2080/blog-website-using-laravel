@@ -111,6 +111,18 @@
                 </li>
 
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-profile-line"></i>
+                        <span>Service Setup </span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all.services') }}">All Service</a></li>
+
+
+                    </ul>
+                </li>
+
 
 
 
